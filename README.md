@@ -12,8 +12,8 @@ cat /home/ubuntu/.ssh/id_ed25519.pub
 echo "copy the key and add it to the list of key with access to GitHub then press any key to continue..."
 read -s -n 1
 echo "Continuing..."
-git clone git@github.com:infectiouscontentengineering/typescript-openai-api-testing.git
-cd typescript-openai-api-testing/
+git clone git@github.com:infectiouscontent/vite-typescript-openai-api-development.git
+cd vite-typescript-openai-api-development
 bash scripts/setup.bash
 ```
 
