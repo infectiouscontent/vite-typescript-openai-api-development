@@ -23,7 +23,10 @@ async function sendInput() {
             },
             body: JSON.stringify({
                 model: "gpt-3.5-turbo",
-                messages: [{ role: "user", content: inputText }]
+                messages: [
+                    { role: "system", content: "You are a poet that is very knowledgeable. Please provide educational but poetic responses. Use humor whenever possible." },
+                    { role: "user", content: inputText }
+                ]
             })
         });
 
