@@ -1,16 +1,19 @@
 const button = document.getElementById('submission-button') as HTMLButtonElement | null;
-const userInput = document.getElementById('user-input') as HTMLInputElement | null;
+const systemInput = document.getElementById('system-input') as HTMLInputElement | null;
+const userInput = document.getElementById('user-input') as HTMLTextAreaElement | null;
 const responseOutput = document.getElementById('response') as HTMLElement | null;
 
 async function sendInput() {
-    if (!userInput || !responseOutput) {
+    if (!systemInput || !userInput || !responseOutput) {
         console.error('Required DOM elements are missing.');
         return;
     }
 
-    const inputText = userInput.value.trim();
-    if (!inputText) {
-        responseOutput.textContent = 'Input cannot be empty.';
+    const systemText = systemInput.value.trim();
+    const userText = userInput.value.trim();
+
+    if (!userText) {
+        responseOutput.textContent = 'User input cannot be empty.';
         return;
     }
 
@@ -24,8 +27,8 @@ async function sendInput() {
             body: JSON.stringify({
                 model: "gpt-3.5-turbo",
                 messages: [
-                    { role: "system", content: "You are a poet. Respond in prose that rhymes. Use humor whenever possible." },
-                    { role: "user", content: inputText }
+                    { role: "system", content: systemText },
+                    { role: "user", content: userText }
                 ]
             })
         });
