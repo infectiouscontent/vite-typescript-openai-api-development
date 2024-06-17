@@ -1,4 +1,4 @@
-# TYPESCRIPT OPENAI API TESTING
+# VITE TYPESCRIPT OPENAI API DEVELOPMENT
 
 Use Typescript and Vite to interface with the OpenAI API.
 
